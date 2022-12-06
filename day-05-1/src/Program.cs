@@ -22,10 +22,6 @@ namespace ConsoleApplication {
             }
 
             Console.WriteLine(stackArea.returnAllTopCrates());
-
-
-            // int sectionOverlapSum = sections.Count(s => s.doPairsOverlap());
-            // Console.WriteLine(sectionOverlapSum);
         }
     }
 }
