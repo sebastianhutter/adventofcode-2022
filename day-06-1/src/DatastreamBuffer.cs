@@ -1,18 +1,20 @@
 namespace Datastream {
     public class Buffer {
         private string rawMessage;
-        private string markerChars;
-        private int markerPosition;
+        private string packetMarkerChars;
+        private int packetMarkerPosition;
+
+        private int packetMarkerLength = 4;
 
         public Buffer(string m) {
             rawMessage = m;
-            markerPosition = findMarkerPositionInRawMessage();
-            markerChars = rawMessage.Substring(markerPosition-4,4);
+            packetMarkerPosition = findMarkerPositionInRawMessage(packetMarkerLength);
+            packetMarkerChars = rawMessage.Substring(packetMarkerPosition-packetMarkerLength,packetMarkerLength);
         }
 
-        private int findMarkerPositionInRawMessage() {
-            for(int i=3; i<rawMessage.Length; i++) {
-                string possibleMarker = rawMessage.Substring(i-3,4);
+        private int findMarkerPositionInRawMessage(int markerLength) {
+            for(int i=markerLength-1; i<rawMessage.Length; i++) {
+                string possibleMarker = rawMessage.Substring(i-(markerLength-1),markerLength);
                 if (isMarkerUnique(possibleMarker)) {
                     return i+1;
                 }                
@@ -31,12 +33,12 @@ namespace Datastream {
             return true;
         }
 
-        public int getMarkerPosition() {
-            return markerPosition;
+        public int getPacketMarkerPosition() {
+            return packetMarkerPosition;
         }
 
-        public string getMarkerChars() {
-            return markerChars;
+        public string getPacketMarkerChars() {
+            return packetMarkerChars;
         }
     }
 }

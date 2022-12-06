@@ -13,7 +13,7 @@ namespace ConsoleApplication {
                 buffer.Add(new Datastream.Buffer(m));
             }
             
-            Console.WriteLine(buffer[0].getMarkerPosition());
+            Console.WriteLine(buffer[0].getPacketMarkerPosition());
 
         }
     }
