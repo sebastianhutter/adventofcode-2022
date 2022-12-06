@@ -12,7 +12,7 @@ namespace ConsoleApplication {
                 sections.Add(new Section(areas.a, areas.b));
             }
             
-            int sectionOverlapSum = sections.Count(s => s.doPairsFullyContainEachOther());
+            int sectionOverlapSum = sections.Count(s => s.doPairsOverlap());
             Console.WriteLine(sectionOverlapSum);
         }
     }
