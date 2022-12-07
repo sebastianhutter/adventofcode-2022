@@ -27,7 +27,6 @@ namespace ConsoleApplication {
                 if ((o.isCli()) && (o.getOutput().StartsWith("cd ")))
                 {
                     string targetDir = o.getOutput().Substring(2).Trim();
-                    ;
 
                     if (targetDir == "..")
                     {

@@ -18,9 +18,6 @@ namespace ConsoleApplication {
             // initialize filetree object and start parsing the command line output
             Filesystem.Tree fsTree = new Filesystem.Tree();
 
-
-            
-
             Filesystem.Dir rootDir = fsTree.getRootDir();
             string currentDirPath = "";
             Filesystem.Dir currentDir = rootDir;
@@ -30,8 +27,6 @@ namespace ConsoleApplication {
                 if ((o.isCli()) && (o.getOutput().StartsWith("cd ")))
                 {
                     string targetDir = o.getOutput().Substring(2).Trim();
-                    ;
-
                     if (targetDir == "..")
                     {
                         currentDirPath = currentDirPath.Substring(0, currentDirPath.LastIndexOf("/"));
