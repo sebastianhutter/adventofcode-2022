@@ -17,29 +17,10 @@ namespace ConsoleApplication {
 
             // initialize filetree object and start parsing the command line output
             Filesystem.Tree fsTree = new Filesystem.Tree();
-
-            
-
-            // rootDir.addDirectory("abc");
-            // rootDir.addDirectory("def");
-            //
-            //
-            // Filesystem.Dir n = fsTree.findDirectory("abc");
-            //
-            // n.addDirectory("yarp");
-            // n.addFile("bluuub", 100);
-            //
-            // Filesystem.Dir n2 = fsTree.findDirectory("abc/yarp");
-            //
-            // n2.addDirectory("bliib");
-            // n2.addFile("uiefnbeurger", 202020);
-            
-            // fsTree.addNode(new Filesystem.Dir("/", "dirB"));
-            
-
             Filesystem.Dir rootDir = fsTree.getRootDir();
             string currentDirPath = "";
             Filesystem.Dir currentDir = rootDir;
+            
             foreach(Output o in outputs) {
                 // if o is a command and starts with dir we need to do something,
                 // for ls we dont need to act

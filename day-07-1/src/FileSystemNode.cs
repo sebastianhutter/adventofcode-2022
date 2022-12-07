@@ -1,6 +1,5 @@
 namespace Filesystem {
     public class Node {
-        //protected string? parentNode { get; set; }
         protected string? name { get; set; }
         protected int size { get; set; } = 0;
         
@@ -26,7 +25,6 @@ namespace Filesystem {
         List<Node> contents;
         public Dir(string n) {
             contents = new List<Node>();
-            //parentNode = null;
             name = n;
         }
 
@@ -65,7 +63,6 @@ namespace Filesystem {
 
     public class File : Node {
         public File(string n, int s) {
-            //parentNode = pn;
             name = n;
             size = s;
         }
